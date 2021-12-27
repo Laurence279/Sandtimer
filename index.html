@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Sandtimer</title>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.2.0/build/global/luxon.min.js"></script>
+</head>
+
+<body>
+
+    <div id="counter-container">
+        <div>
+            <input id="hours" type="text" placeholder="00" maxlength="2">
+            <label for="hours">Hours</label>
+            <span class="colon">:</span>
+        </div>
+        <div>
+            <input id="mins" type="text" placeholder="00" maxlength="2">
+            <label for="mins">Mins</label>
+            <span class="colon">:</span>
+        </div>
+        <div>
+            <input id="secs" type="text" placeholder="00" maxlength="2">
+            <label for="secs">Secs</label>
+        </div>
+
+    </div>
+
+    <div id="button-container">
+        <button id="start-btn">Start</button>
+        <button id="stop-btn">Stop</button>
+    </div>
+
+    <div id="reset-btn-container">
+        <button id="reset-btn" class="hidden">Reset</button>
+    </div>
+
+
+    <img id="hourglass-img" src="hourglass.png" alt="hourglass">
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
