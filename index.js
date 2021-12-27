@@ -52,15 +52,16 @@ function startTimer(timeRemaining) {
     if (timer || timeRemaining.as('seconds') <= 0 || timeRemaining == undefined) return
     //console.log("Starting timer from ... ", timeRemaining.toObject())
     timer = setInterval(() => {
+
         if (timeRemaining.as('seconds') <= 0) {
             alarm.loop = true;
             alarm.play();
             clearInterval(timer);
             return;
         }
-        timeRemaining = timeRemaining.minus(1000).normalize();
+        timeRemaining = timeRemaining.minus(1000).shiftTo('hours', 'minutes', 'seconds');
         updateTimerDisplay(timeRemaining.toObject())
-        //console.log("Time remaining: ", timeRemaining.toObject())
+        console.log("Time remaining: ", timeRemaining.toObject())
 
     }, 1000)
 }
