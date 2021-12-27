@@ -61,7 +61,7 @@ function startTimer(timeRemaining) {
         }
         timeRemaining = timeRemaining.minus(1000).shiftTo('hours', 'minutes', 'seconds');
         updateTimerDisplay(timeRemaining.toObject())
-        console.log("Time remaining: ", timeRemaining.toObject())
+        //console.log("Time remaining: ", timeRemaining.toObject())
 
     }, 1000)
 }
