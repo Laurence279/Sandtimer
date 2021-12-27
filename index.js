@@ -64,13 +64,13 @@ function startTimer(timeRemaining) {
     }, 1000)
 }
 
-startBtn.addEventListener("click", (event) => {
+startBtn.addEventListener("pointerdown", (event) => {
 
     let timeRemaining = getTimerStartPoint();
     startTimer(timeRemaining);
 })
 
-stopBtn.addEventListener("click", (event) => {
+stopBtn.addEventListener("pointerdown", (event) => {
     //console.log("Stopping timer...")
     clearInterval(timer);
     timer = undefined;
