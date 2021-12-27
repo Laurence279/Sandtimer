@@ -35,10 +35,9 @@ inputs.forEach((input, index) => {
 
 function getTimerStartPoint() {
 
-    const hours = hoursInput.value;
-    const mins = minsInput.value;
-    const secs = secsInput.value;
-    if (hours == undefined || mins == undefined || secs == undefined) return null
+    const hours = hoursInput.value || 0;
+    const mins = minsInput.value || 0;
+    const secs = secsInput.value || 0;
     const dur = Duration.fromObject({
         hours: hours,
         minutes: mins,
@@ -50,7 +49,7 @@ function getTimerStartPoint() {
 
 
 function startTimer(timeRemaining) {
-    if (timer || timeRemaining.as('seconds') <= 0 || timeRemaining == null) return
+    if (timer || timeRemaining.as('seconds') <= 0 || timeRemaining == undefined) return
     //console.log("Starting timer from ... ", timeRemaining.toObject())
     timer = setInterval(() => {
         if (timeRemaining.as('seconds') <= 0) {
